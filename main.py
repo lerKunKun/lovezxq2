@@ -40,11 +40,9 @@ def get_words():
     return get_words()
   return words.json()['data']['text']
 
-def get_color():
-    # 获取随机颜色
-    get_colors = lambda n: list(map(lambda i: "#" + "%06x" % random.randint(0, 0xFFFFFF), range(n)))
-    color_list = get_colors(100)
-    return random.choice(color_list)
+def get_random_color():
+  return "#%06x" % random.randint(0, 0xFFFFFF)
+
 
 client = WeChatClient(app_id, app_secret)
 
